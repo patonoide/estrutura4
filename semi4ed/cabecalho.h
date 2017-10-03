@@ -1,49 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   cabecalho.h
- * Author: Asus
- *
- * Created on 29 de Setembro de 2017, 21:16
- */
-
 struct lista {
     char info;
     struct lista * prox;
-};
-typedef struct lista Lista;
+}; typedef struct lista Lista;
 
 struct pilhaOp {
     Lista * prim;
-};
-typedef struct pilhaOp pilhaOp;
+    int n;
+}; typedef struct pilhaOp PilhaOp;
 
 struct pilhaFloat {
     float vet[20];
     int n;
-};
-typedef struct pilhaFloat pilhaFloat;
+}; typedef struct pilhaFloat PilhaFloat;
 
 struct calculadora {
-    pilhaFloat * valores;
-    pilhaOp * operadores;
-};
-typedef struct calculadora Calc;
+    PilhaFloat * valores;
+    PilhaOp * operadores;
+}; typedef struct calculadora Calc;
 
-pilhaOp * criapilhaOp();
-void pilhaOpPush(pilhaOp * p, char c);
-char pilhaOpPop(pilhaOp * p);
-void liberapilhaOp(pilhaOp * p);
-void imprimepilhaOp(pilhaOp * p);
-pilhaFloat * criapilhaFloat();
-void pilhaFloatPush(pilhaFloat * p, float valor);
-float pilhaFloatPop(pilhaFloat * p);
-void liberapilhaFloat(pilhaFloat * p);
-void imprimepilhaFloat(pilhaFloat * p);
+PilhaOp * criapilhaOp();
+void pilhaOpPush(PilhaOp * p, char c);
+char pilhaOpPop(PilhaOp * p);
+void liberapilhaOp(PilhaOp * p);
+void imprimepilhaOp(PilhaOp * p);
+PilhaFloat * criapilhaFloat();
+void pilhaFloatPush(PilhaFloat * p, float valor);
+float pilhaFloatPop(PilhaFloat * p);
+void liberapilhaFloat(PilhaFloat * p);
+void imprimepilhaFloat(PilhaFloat * p);
 Calc * criaCalculadora();
 void imprimeCalc(Calc *cal);
 void insereOp(Calc * cal, char c);
