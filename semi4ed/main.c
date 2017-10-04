@@ -13,6 +13,7 @@ int main(int argc, char** argv) {
     float valor;
     char op;
     Calc *cal = criaCalculadora();
+    
     do {
         printf("Menu:\n 1-Adicionar valor\n 2-Adicionar operação\n 3-Realizar Cálculo\n 4-Imprimir Pilhas\n 5-Sair");
         scanf("%i", &m);

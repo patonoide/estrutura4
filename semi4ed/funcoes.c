@@ -114,19 +114,19 @@ Calc *criaCalculadora(){
 
 void imprimeCalc(Calc *cal){
     imprimePilhaFloat(cal->valores);
-    imprimePilhaOp(cal->operadores->prim);
+    imprimePilhaOp(cal->operadores);
 }
 
 void insereOp(Calc * cal, char c){
     if(strcmp(c, "+")==0 || strcmp(c, "-")==0 || strcmp(c, "*")==0 || strcmp(c, "/")==0){
-       pilhaOpPush(cal, c);
+       pilhaOpPush(cal->operadores, c);
        printf("Operador inserido com sucesso!!!");
     }else{
         printf("Operador inválido!!!");
     }
 }
 void insereValor(Calc * cal, float valor){
-    pilhaFloatPush(cal, valor);
+    pilhaFloatPush(cal->valores, valor);
     printf("Valor inserido com sucesso!!!");
 }
 
