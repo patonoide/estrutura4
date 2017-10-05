@@ -54,7 +54,8 @@ void imprimePilhaOp(PilhaOp * p) {
     Lista *aux;
     printf("Pilha de Operadores:\n");
     for (aux = p->prim; aux != NULL; aux = aux->prox) {
-        printf(" %c \n", p->prim->info);
+        printf(" %c \n", aux->info);
+        
     }
 }
 
@@ -169,7 +170,7 @@ void realizaCalc(Calc * cal) {
                 break;
             }
         }
-        if (v2 == 0 && op == '/') {
+        if (v2 == 0 && op == '/') { 
             printf("Nao e possivel dividir por 0\n");
         }else{
             printf("Resultado da operacao %.2f %c %.2f = %.2f", v, op, v2, res);
