@@ -14,19 +14,22 @@ int main(int argc, char** argv) {
     char op;
     Calc *cal = criaCalculadora();
     
+    printf("Portinho e MiniMarina Productions EC e nois 2017.\n");
     do {
-        printf("Menu:\n 1-Adicionar valor\n 2-Adicionar operação\n 3-Realizar Cálculo\n 4-Imprimir Pilhas\n 5-Sair");
+        printf("\nMenu:\n 1-Adicionar valor\n 2-Adicionar operacao\n 3-Realizar Calculo\n 4-Imprimir Pilhas\n 5-Sair\nOpcao: ");
         scanf("%i", &m);
         switch (m) {
             case 1:{
                 printf("\nInforme um valor real:");
-                scanf("%f", valor);
+                scanf("%f", &valor);
                 insereValor(cal, valor);
                 break;
             }
             case 2:{
                 printf("\nInforme um operador:\n  (+)Adicao\n  (-)Subtracao\n  (*)Multiplicacao\n  (/)Divisao\n");
-                scanf("%c", op);
+                setbuf(stdin, NULL);
+                scanf("%c", &op);
+                setbuf(stdin, NULL);
                 insereOp(cal, op);
                 break;
             }
